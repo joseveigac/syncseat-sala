@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Política de privacidad de SyncSeat</title>
+    <link rel="icon" href="./icon/32.png" />
+    <style>
+      :root { color-scheme: light dark; --accent: #8b6cff; }
+      body { margin: 0; font: 16px/1.6 system-ui, sans-serif; background: Canvas; color: CanvasText; }
+      main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+      h1 { font-size: 28px; line-height: 1.2; }
+      h2 { margin-top: 48px; border-bottom: 1px solid color-mix(in srgb, CanvasText 15%, transparent); }
+      a { color: var(--accent); overflow-wrap: anywhere; }
+      code { font-size: 0.9em; overflow-wrap: anywhere; }
+      li { margin: 4px 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+<h1>Política de privacidad de SyncSeat</h1>
+<p>Última revisión: octubre de 2026 (last revised: October 2026).</p>
+<h2>Español</h2>
+<h3>Resumen</h3>
+<p>SyncSeat no tiene servidor ni cuentas. Los desarrolladores no recogen, reciben, venden ni comparten ningún dato de quien la usa.</p>
+<h3>Qué se queda en tu equipo</h3>
+<p>En el almacenamiento de la extensión en tu navegador (<code>chrome.storage</code>), y en ningún otro sitio:</p>
+<ul><li>
+Los ajustes (idioma, vista, motores automáticos, país del buscador, claves de TMDB y de Gemini si las pones).
+</li><li>
+Los recortes de la cámara por canal y las zonas del contador.
+</li><li>
+Los mapas de sincronía que grabas.
+</li><li>
+La sesión en curso (qué pestañas son tus vídeos 1, 2, 3…, y las webs que abriste desde una sala), que se borra al cerrar el navegador.
+</li><li>
+Los modelos y los idiomas del OCR descargados, en la caché del navegador.
+</li></ul>
+<p>Desinstalar la extensión lo borra todo.</p>
+<h3>Qué se procesa en tu equipo</h3>
+<p>La imagen y el audio del directo y del contenido se leen en tu navegador para sincronizar (contador del streamer, OCR, reconocimiento de voz, silueta, propuesta de recorte, bajar el volumen). Nada de eso sale de tu equipo, salvo lo que se indica en «Gemini».</p>
+<p>SyncSeat nunca sube ni descarga el contenido que ves, ni lo envía a nadie, salvo el escenario que, como anfitrión de una sala, compartes con tus amigos (ver «Salas con amigos»). Un vídeo exportado se genera en tu equipo y solo se guarda si tú lo guardas.</p>
+<h3>Qué llamadas de red hace</h3>
+<ul><li>
+<strong>Buscador:</strong> cuando buscas, el título que escribes, tu país y tus idiomas se envían a AniList (<code>graphql.anilist.co</code>), Kitsu (<code>kitsu.io</code>) y TMDB (<code>api.themoviedb.org</code>, solo con tu clave). Las carátulas se cargan de esos servicios. Cada uno tiene su propia política de privacidad.
+</li><li>
+<strong>Mis webs:</strong> si añades webs propias en Ajustes, SyncSeat abre sus páginas de búsqueda y de capítulos (con tu sesión en esas webs, como si las abrieras tú) solo para leer sus enlaces. No se envía nada tuyo a ningún otro sitio.
+</li><li>
+<strong>YouTube desde la sala:</strong> si buscas con palabras en la sala (o con «ss» en la barra de direcciones) y das permiso para youtube.com, las palabras van a YouTube (<code>www.youtube.com</code>, con tu sesión, como si buscaras en su web) y SyncSeat lee de su página de resultados el título, el canal y la duración de cada vídeo para enseñarlos. Las miniaturas se cargan de <code>i.ytimg.com</code>. Los demás buscadores (Google, Twitch…) solo se abren en una pestaña nueva.
+</li><li>
+<strong>Salas con amigos (si las usas):</strong> tu navegador se conecta directamente con el de tus amigos, sin pasar por ningún servidor nuestro. Se envían solo: tu nombre en la sala; el minuto del vídeo, si está en pausa o cargando y si vas por tu cuenta; la dirección de lo que tienes vinculado; la lista de vídeos de la sala que prepara el anfitrión (direcciones y títulos, hasta 50); y los mensajes del chat. Nada de eso se guarda: se pierde al cerrar la sala. Para conectar:
+<ul><li>
+tu navegador pregunta una vez su dirección pública a un servidor STUN público de Google (<code>stun.l.google.com</code>); tus amigos verán tu dirección IP, como en cualquier llamada directa;
+</li><li>
+los navegadores se presentan dejando mensajes en relés públicos de Nostr (<code>relay.damus.io</code>, <code>nos.lol</code>, <code>relay.primal.net</code>, <code>nostr.mom</code>, <code>relay.snort.social</code>), gestionados por terceros. Esos mensajes van cifrados con una clave que solo está en el enlace de la sala, así que el relé no puede leerlos. Son efímeros (los relés no los guardan) y van firmados con una clave nueva en cada sala, sin relación contigo. Como en cualquier conexión, el relé ve tu dirección IP mientras dura la presentación. Los mensajes del chat viajan por esa misma conexión directa y no se guardan. Si como anfitrión compartes tu escenario, la imagen y el sonido de tus vídeos van por conexiones directas a los navegadores de tus amigos de la sala, nunca a un servidor; puedes dejar de compartir cuando quieras. La web de la sala (<code>joseveigac.github.io</code>, en GitHub Pages) es una página estática: el código de la sala va después de <code>#</code> en el enlace, y esa parte nunca se envía a GitHub. Si eliges un archivo en esa web, se reproduce en tu equipo y no se sube.
+</li></ul>
+</li><li>
+<strong>Descarga de modelos, bajo demanda y con aviso del tamaño:</strong> idioma del OCR (jsDelivr), modelos de voz Whisper (Hugging Face) y modelos de visión de MediaPipe (Google, <code>storage.googleapis.com</code>). Son ficheros de datos; la petición no lleva ningún dato tuyo.
+</li><li>
+<strong>Gemini, opcional:</strong> solo si pones tu clave de la API de Gemini y eliges ese motor de voz, se envían trozos de unos 5 segundos del audio del directo a Google (<code>generativelanguage.googleapis.com</code>) con tu clave. Se aplica la política de Google para esa API.
+</li></ul>
+<p>No hay analítica, publicidad, informes de errores ni ninguna otra llamada.</p>
+<h3>Permisos</h3>
+<ul><li>
+<strong>Acceso a twitch.tv:</strong> leer el reloj del reproductor y mostrar la barra de control.
+</li><li>
+<strong>Acceso a otras webs (opcional, una a una):</strong> se pide solo cuando añades una pestaña o un enlace de esa web (tu web de streaming, YouTube, Kick…). Puedes retirarlo en Ajustes.
+</li><li>
+<strong>Acceso a todas las webs (opcional):</strong> solo si lo permites desde el panel o desde la sala, para listar tus pestañas con vídeo y elegirlas con un clic. Se usa para ver la dirección y el título de cada pestaña y si tiene vídeo; no se lee nada más ni se envía nada. Puedes retirarlo en Ajustes.
+</li><li>
+<strong>storage:</strong> guardar lo descrito arriba.
+</li><li>
+<strong>scripting:</strong> poner el adaptador de vídeo en las webs que añades y mostrar el panel de SyncSeat, flotando, en la pestaña donde pulsas su icono.
+</li><li>
+<strong>activeTab:</strong> saber en qué web estás al pulsar el icono de la extensión, para pedir permiso solo para ella, y mostrar ahí el panel.
+</li><li>
+<strong>offscreen:</strong> una página oculta de la extensión que mantiene la conexión de la sala con tus amigos mientras dura; se cierra al salir de la sala.
+</li><li>
+<strong>declarativeNetRequestWithHostAccess:</strong> dejar que el escenario cargue dentro de la pestaña de SyncSeat las webs de tus vídeos, que normalmente no se dejan meter en otra página. Solo quita esa prohibición para las webs que ya has permitido y mientras el escenario está abierto: en la pestaña de SyncSeat y, si la web usa un service worker, en las páginas que este sirve. No lee ni envía nada.
+</li></ul>
+<h3>Contacto</h3>
+<p>Para cualquier duda: abre una incidencia en <a href="https://github.com/joseveigac/syncseat-sala/issues">https://github.com/joseveigac/syncseat-sala/issues</a>.</p>
+<h2>English</h2>
+<h3>Summary</h3>
+<p>SyncSeat has no server and no accounts. Its developers do not collect, receive, sell or share any data about its users.</p>
+<h3>What stays on your device</h3>
+<p>In the extension's storage in your browser (<code>chrome.storage</code>), and nowhere else:</p>
+<ul><li>
+Settings (language, view, automatic engines, search country, TMDB and Gemini keys if you enter them).
+</li><li>
+Camera crops per channel and counter zones.
+</li><li>
+The sync maps you record.
+</li><li>
+The current session (which tabs are your videos 1, 2, 3…, and the sites you opened from a room), cleared when the browser closes.
+</li><li>
+Downloaded models and OCR languages, in the browser cache.
+</li></ul>
+<p>Uninstalling the extension deletes all of it.</p>
+<h3>What is processed on your device</h3>
+<p>The picture and sound of the stream and of the content are read in your browser to keep them in sync (the streamer's counter, OCR, speech recognition, silhouette, crop proposal, lowering the volume). None of it leaves your device, except as described under &quot;Gemini&quot;.</p>
+<p>SyncSeat never uploads or downloads the content you watch, nor sends it to anyone, except the stage that you, as the host of a room, share with your friends (see &quot;Watch parties&quot;). An exported video is made on your device and is only saved if you save it.</p>
+<h3>Network requests</h3>
+<ul><li>
+<strong>Search:</strong> when you search, the title you type, your country and your languages are sent to AniList (<code>graphql.anilist.co</code>), Kitsu (<code>kitsu.io</code>) and TMDB (<code>api.themoviedb.org</code>, only with your key). Posters load from those services. Each has its own privacy policy.
+</li><li>
+<strong>My sites:</strong> if you add your own sites in Settings, SyncSeat opens their search and episode pages (with your session on those sites, as if you opened them) only to read their links. Nothing about you is sent anywhere else.
+</li><li>
+<strong>YouTube from the room:</strong> if you search with words in the room (or with &quot;ss&quot; in the address bar) and allow youtube.com, the words go to YouTube (<code>www.youtube.com</code>, with your session, as if you searched on its site) and SyncSeat reads the title, channel and length of each video from its results page to show them. Thumbnails load from <code>i.ytimg.com</code>. The other search engines (Google, Twitch…) only open in a new tab.
+</li><li>
+<strong>Watch parties (if you use them):</strong> your browser connects directly with your friends', without going through any server of ours. Only these are sent: your name in the room; the video's minute, whether it is paused or loading and whether you are going your own way; the address of what you linked; the room's video list that the host puts together (addresses and titles, up to 50); and the chat messages. None of it is stored: it is gone when the room closes. To connect:
+<ul><li>
+your browser asks a public Google STUN server (<code>stun.l.google.com</code>) once for its public address; your friends will see your IP address, as in any direct call;
+</li><li>
+the browsers introduce themselves by leaving messages on public Nostr relays (<code>relay.damus.io</code>, <code>nos.lol</code>, <code>relay.primal.net</code>, <code>nostr.mom</code>, <code>relay.snort.social</code>), run by third parties. Those messages are encrypted with a key that is only in the room link, so the relay cannot read them. They are ephemeral (relays do not store them) and are signed with a new key for each room, unrelated to you. As with any connection, the relay sees your IP address during the introduction. Chat messages travel over that same direct connection and are not stored. If, as the host, you share your stage, your videos' picture and sound go over direct connections to your friends' browsers in the room, never to a server; you can stop sharing at any time. The room web page (<code>joseveigac.github.io</code>, on GitHub Pages) is a static page: the room code goes after <code>#</code> in the link, and that part is never sent to GitHub. If you choose a file on that page, it plays on your device and is not uploaded.
+</li></ul>
+</li><li>
+<strong>Model downloads, on demand and with the size shown first:</strong> OCR language (jsDelivr), Whisper speech models (Hugging Face) and MediaPipe vision models (Google, <code>storage.googleapis.com</code>). They are data files; the request carries no data about you.
+</li><li>
+<strong>Gemini, optional:</strong> only if you enter your Gemini API key and choose that speech engine, chunks of about 5 seconds of the stream's audio are sent to Google (<code>generativelanguage.googleapis.com</code>) with your key. Google's policy for that API applies.
+</li></ul>
+<p>There is no analytics, advertising, crash reporting or any other request.</p>
+<h3>Permissions</h3>
+<ul><li>
+<strong>Access to twitch.tv:</strong> read the player's clock and show the control bar.
+</li><li>
+<strong>Access to other sites (optional, one at a time):</strong> requested only when you add a tab or a link from that site (your streaming site, YouTube, Kick…). You can remove it in Settings.
+</li><li>
+<strong>Access to every site (optional):</strong> only if you allow it from the panel or the room, to list your tabs with a video and choose them with one click. It is used to see each tab's address and title and whether it has a video; nothing else is read and nothing is sent. You can remove it in Settings.
+</li><li>
+<strong>storage:</strong> keep what is described above.
+</li><li>
+<strong>scripting:</strong> add the video adapter to the sites you add, and show SyncSeat's panel, floating, in the tab where you click its icon.
+</li><li>
+<strong>activeTab:</strong> know which site you are on when you click the extension's icon, to ask permission for that site only, and show the panel there.
+</li><li>
+<strong>offscreen:</strong> a hidden extension page that holds the room's connection with your friends while it lasts; it closes when you leave the room.
+</li><li>
+<strong>declarativeNetRequestWithHostAccess:</strong> let the stage load your videos' sites inside SyncSeat's tab, which they normally do not allow. It only lifts that ban for sites you already allowed and while the stage is open: in SyncSeat's tab and, if the site uses a service worker, in the pages it serves. It reads and sends nothing.
+</li></ul>
+<h3>Contact</h3>
+<p>For any question: open an issue at <a href="https://github.com/joseveigac/syncseat-sala/issues">https://github.com/joseveigac/syncseat-sala/issues</a>.</p>
+    </main>
+  </body>
+</html>
